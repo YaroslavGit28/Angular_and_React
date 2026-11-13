@@ -11,4 +11,29 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+    <Target Name="PublishReact" AfterTargets="ComputeFilesToPublish">
+    <Exec WorkingDirectory="ClientApp/react" Command="npm install" />
+    <Exec WorkingDirectory="ClientApp/react" Command="npm run build" />
+
+    <ItemGroup>
+        <ReactFiles Include="ClientApp/react/dist/**" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ReactFiles)"
+          DestinationFolder="$(PublishDir)wwwroot/react/%(RecursiveDir)" />
+</Target>
+  <Target Name="PublishAngular" AfterTargets="ComputeFilesToPublish">
+    <Exec WorkingDirectory="ClientApp/angular"
+          Command="npm install" />
+
+    <Exec WorkingDirectory="ClientApp/angular"
+          Command="ng build --configuration production" />
+
+    <ItemGroup>
+        <AngularFiles Include="ClientApp/angular/dist/angular/browser/**" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(AngularFiles)"
+          DestinationFolder="$(PublishDir)wwwroot/angular/%(RecursiveDir)" />
+</Target>
 </Project>
