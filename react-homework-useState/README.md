@@ -17,23 +17,6 @@ src/
 ├── main.jsx
 └── index.css
 ```
-
-# Исходный код
-
-| Компонент | Ссылка | Назначение |
-|-----------|--------|------------|
-| App | [`src/App.jsx`](./src/App.jsx) | Главный компонент приложения. Хранит состояние Todo List, поиск, фильтрацию, сортировку и массовые операции. |
-| Main | [`src/main.jsx`](./src/main.jsx) | Точка входа React-приложения. |
-| Стили | [`src/index.css`](./src/index.css) | Основные стили проекта. |
-| Counter | [`src/components/Counter.jsx`](./src/components/Counter.jsx) | Счетчик с изменяемым шагом. |
-| ThemeSwitcher | [`src/components/ThemeSwitcher.jsx`](./src/components/ThemeSwitcher.jsx) | Переключение между светлой и темной темой. |
-| LoginForm | [`src/components/LoginForm.jsx`](./src/components/LoginForm.jsx) | Форма авторизации с проверкой заполнения полей. |
-| ShoppingList | [`src/components/ShoppingList.jsx`](./src/components/ShoppingList.jsx) | Список покупок. |
-| TodoForm | [`src/components/TodoForm.jsx`](./src/components/TodoForm.jsx) | Добавление новых задач. |
-| TodoItem | [`src/components/TodoItem.jsx`](./src/components/TodoItem.jsx) | Отображение, редактирование и удаление задачи. |
-| TodoList | [`src/components/TodoList.jsx`](./src/components/TodoList.jsx) | Вывод списка задач. |
-| Filters | [`src/components/Filters.jsx`](./src/components/Filters.jsx) | Фильтрация задач по статусу и приоритету. |
-
 # Выполненные задания
 
 | № | Задание | Реализация |
