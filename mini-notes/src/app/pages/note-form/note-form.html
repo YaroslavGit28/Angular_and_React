@@ -1,0 +1,70 @@
+<h1>Создать заметку</h1>
+
+<form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+
+    <label>Название</label>
+
+    <input
+        type="text"
+        formControlName="title">
+
+    @if(title?.touched && title?.invalid){
+
+        @if(title?.errors?.['required']){
+            <small>Введите название</small>
+        }
+
+        @if(title?.errors?.['minlength']){
+            <small>Минимум 3 символа</small>
+        }
+
+    }
+
+    <label>Текст</label>
+
+    <textarea
+        rows="6"
+        formControlName="text">
+    </textarea>
+
+    @if(text?.touched && text?.invalid){
+
+        @if(text?.errors?.['required']){
+            <small>Введите текст заметки</small>
+        }
+
+        @if(text?.errors?.['minlength']){
+            <small>Минимум 5 символов</small>
+        }
+
+    }
+
+    <button
+        type="submit"
+        [disabled]="noteForm.invalid">
+
+        Создать
+
+    </button>
+
+</form>
+
+@if(successMessage){
+
+<p class="success">
+
+    {{ successMessage }}
+
+</p>
+
+}
+
+@if(errorMessage){
+
+<p class="error">
+
+    {{ errorMessage }}
+
+</p>
+
+}
